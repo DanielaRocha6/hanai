@@ -4,9 +4,9 @@ import Links from '../api/links';
 
 export default class Info extends Component {
   render() {
-    const links = this.props.links.map(
-      link => this.makeLink(link)
-    );
+    // const links = this.props.links.map(
+    //   link => this.makeLink(link)
+    // );
 
     return (
       <div>

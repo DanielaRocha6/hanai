@@ -6,7 +6,6 @@ import Navbar from '/imports/ui/Navbar';
 
 
 Meteor.startup(() => {
-  console.log("vsdsdfsd");
   render(<Navbar />, document.getElementById('navbar'));
   render(<App />, document.getElementById('react-target'));
   
