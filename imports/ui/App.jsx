@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
-import Hello from './Hello.jsx';
-import Info from './Info.jsx';
 import Home from "./Home.jsx";
 import { withTracker } from "meteor/react-meteor-data";
 import { Meteor } from "meteor/meteor";
+import Login from "./Login.jsx";
+import SignUp from "./SignUp.jsx";
 import { BrowserRouter as Router, Route,Switch, Redirect} from 'react-router-dom';
 
 
@@ -17,14 +17,10 @@ const App = (props) => {
     props.history.push('/signup');
   };
 
-  const reRender =()=>{
-
-  };
-
   return (<div>
-    <Route exact path="/" render={() => <Home login={login} register={register} profile={reRender}/>}/>
+    <Route exact path="/" render={() => <Home login={login} register={register}/>}/>
     <Route path="/login" component={Login}/>
-    <Route path="/signup" component={Signup}/>
+    <Route path="/signup" component={SignUp}/>
   </div>);
 };
 
