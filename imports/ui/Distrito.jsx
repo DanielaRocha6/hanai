@@ -19,7 +19,7 @@ export default class Distrito extends Component {
 
     irrecolectar() {
         this.setState({recolectar:true});
-        
+
         console.log(this.state.recolectar)
     }
 
@@ -36,7 +36,7 @@ export default class Distrito extends Component {
         this.setState({personas:actual+temp});
         console.log(this.state.personas);
         console.log(this.state.censo);
-        
+
     }
 
     onChangeLocalidad(e) {
@@ -70,7 +70,7 @@ export default class Distrito extends Component {
             </div>
             , document.getElementById('restaurantes'));
     }
-   
+
     onChangePersonas (e) {
         this.personasTemp = e.target.value;
         console.log(this.personasTemp);
@@ -83,11 +83,16 @@ export default class Distrito extends Component {
             , document.getElementById('restaurantes'));
     }
 
+    consultarLocalidad2 (e) {
+        e.preventDefault();
+        this.props.home();
+    }
+
     render() {
         console.log(this.state.censo);
         console.log(this.state.recolectar);
         console.log(this.state.personas);
-        
+
         if (!this.state.recolectar && !this.state.censo) {
             return (
                 <div className="container">
@@ -132,9 +137,10 @@ export default class Distrito extends Component {
                         <option>Rafael Uribe Uribe</option>
                         <option>Ciudad Bolivar</option>
                         <option>Sumapaz</option>
-                    </select>  
+                    </select>
                     <div className="form-group">
                         <button  onClick={this.consultarLocalidad.bind(this)} className="btn btn-primary mb-2 boton2">Enviar</button>
+                        <button onClick={this.consultarLocalidad2.bind(this)} className="btn btn-primary mb-2 boton2">Terminar</button>
                     </div>
                 </form>
                 <div className="d-flex justify-content-center">

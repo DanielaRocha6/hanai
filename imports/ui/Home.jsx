@@ -6,10 +6,9 @@ import Restaurante from "./Restaurante.jsx";
 const Home = (props) => {
   return (
     <div>
-
       <div id="accounts-container">
         {props.user
-          ? props.user.profile.rol==="DISTRITO"? <Distrito/>:<Restaurante user={props.user}/>
+          ? props.user.profile.rol==="DISTRITO"? <Distrito home={props.home}/>:<Restaurante user={props.user}/>
 
           :
           <div>
