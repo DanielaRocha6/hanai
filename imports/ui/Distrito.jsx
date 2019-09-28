@@ -20,22 +20,17 @@ export default class Distrito extends Component {
     irrecolectar() {
         this.setState({recolectar:true});
         
-        console.log(this.state.recolectar)
     }
 
     irCensar() {
         this.setState({censo:true});
-        console.log(this.state.censo)
     }
 
     censar(e){
         e.preventDefault();
-        console.log("----------------------------------------------------", this.personasTemp);
         let actual = parseInt(this.state.personas);
         let temp = parseInt(this.personasTemp);
         this.setState({personas:actual+temp});
-        console.log(this.state.personas);
-        console.log(this.state.censo);
         
     }
 
@@ -73,7 +68,6 @@ export default class Distrito extends Component {
    
     onChangePersonas (e) {
         this.personasTemp = e.target.value;
-        console.log(this.personasTemp);
     }
 
     consultarLocalidad (e) {
@@ -107,10 +101,7 @@ export default class Distrito extends Component {
     }
 
     render() {
-        console.log(this.state.censo);
-        console.log(this.state.recolectar);
-        console.log(this.state.personas);
-        
+              
         if (!this.state.recolectar && !this.state.censo) {
             return (
                 <div className="container">
