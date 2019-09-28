@@ -18,7 +18,7 @@ export default class Recolectar extends Component {
 
   render() {
     if(algo){
-    return (  <div class="container">
+    return ( <div class="container">
     <div class="d-flex justify-content-center">
       <h1>Censar</h1>
     </div>
@@ -64,6 +64,8 @@ export default class Recolectar extends Component {
           </li>
     </ol>
   </div>
-</div> );
-    }
-
+</div>  );
+    } 
+return null;
+}
+}
