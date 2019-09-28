@@ -79,7 +79,30 @@ export default class Distrito extends Component {
     consultarLocalidad (e) {
         e.preventDefault();
         ReactDOM.render(
-            <div>Restaurante </div>
+            <div className="d-flex justify-content-center">
+            <ol>
+                    <li>Restaurante Doña Blanca
+                        <ul>
+                            <li>Cll. 27 #13-23</li>
+                            <li>6 platos</li>
+                        </ul>
+                    </li>
+
+                    <li>Restaurante Anita
+                        <ul>
+                            <li>Cll. 85 # 112-22</li>
+                            <li>15 platos</li>
+                        </ul>
+                    </li>
+
+                    <li>Restaurante La Plancha
+                        <ul>
+                            <li>Cll. 28 # 49-35</li>
+                            <li>3 platos</li>
+                        </ul>
+                    </li>
+                </ol>
+                </div>
             , document.getElementById('restaurantes'));
     }
 
