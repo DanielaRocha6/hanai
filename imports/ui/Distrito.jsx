@@ -19,12 +19,6 @@ export default class Distrito extends Component {
 
     irrecolectar() {
         this.setState({recolectar:true});
-<<<<<<< HEAD
-
-        console.log(this.state.recolectar)
-=======
-
->>>>>>> 6f325ae28f13126202398f7952734fa6683eea66
     }
 
     irCensar() {
@@ -36,13 +30,6 @@ export default class Distrito extends Component {
         let actual = parseInt(this.state.personas);
         let temp = parseInt(this.personasTemp);
         this.setState({personas:actual+temp});
-<<<<<<< HEAD
-        console.log(this.state.personas);
-        console.log(this.state.censo);
-
-=======
-
->>>>>>> 6f325ae28f13126202398f7952734fa6683eea66
     }
 
     onChangeLocalidad(e) {
@@ -117,7 +104,6 @@ export default class Distrito extends Component {
     }
 
     render() {
-
 
         if (!this.state.recolectar && !this.state.censo) {
             return (
