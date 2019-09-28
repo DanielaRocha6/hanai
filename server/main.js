@@ -20,13 +20,10 @@ Meteor.methods({
       donaciones:[]
     })
   },
-  insertDonation: function(id, nuevaDonacion){
-    console.log(id);
-    console.log(nuevaDonacion);
-    Restaurantes.findOne({id:id},(err, result)=>{
-      if(err) throw console.log(err);
-      console.log(result);
-    });
+  insertDonation: function(username, donacion){
+    const res= Restaurantes.findOne({id:username});
+    res.donaciones.push(donacion)
+    Restaurantes.update({id:username},res);
   }
  });
 
