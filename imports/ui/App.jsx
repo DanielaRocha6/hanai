@@ -6,6 +6,7 @@ import Login from "./Login.jsx";
 import SignUp from "./SignUp.jsx";
 import SignUpDistrito from "./SignUpDistrito.jsx";
 import SignUpRestaurante from "./SignUpRestaurante.jsx";
+import Navbar from '/imports/ui/Navbar';
 import { BrowserRouter as Router, Route,Switch, Redirect} from 'react-router-dom';
 
 
@@ -33,6 +34,7 @@ const App = (props) => {
 
 
   return (<div>
+    <Navbar user={props.user}/>
     <Route exact path="/" render={() => <Home login={login} register={register}/>}/>
     <Route path="/login" component={Login}/>
     <Route exact path="/signup" render={() => <SignUp distrito={registerDistrito} restaurante={registerRestaurante}/>}/>

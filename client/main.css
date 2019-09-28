@@ -3,6 +3,19 @@ body {
   font-family: sans-serif;
 }
 
+.boton {
+  width:20%;
+  margin: 1rem;
+}
+
+.boton2{
+  margin-top:1rem
+}
+
+.divDistrito{
+  margin-left: 21rem
+}
+
 button {
   margin: 1rem;
 }

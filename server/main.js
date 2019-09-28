@@ -4,11 +4,13 @@ Meteor.methods({
   createUsers: function(user, id, password, rol, localidad, direccion) {
     Accounts.createUser({
       username: user,
-      id: id,
-      direccion: direccion,
-      localidad:localidad,
-      password: password,
-      rol: rol
+      profile:{
+        id:id,
+        direccion:direccion,
+        rol:rol,
+        localidad:localidad
+      },
+      password: password
     })
   },
   deleteUser : function(id){
