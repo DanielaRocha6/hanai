@@ -19,24 +19,30 @@ export default class Distrito extends Component {
 
     irrecolectar() {
         this.setState({recolectar:true});
+<<<<<<< HEAD
 
         console.log(this.state.recolectar)
+=======
+
+>>>>>>> 6f325ae28f13126202398f7952734fa6683eea66
     }
 
     irCensar() {
         this.setState({censo:true});
-        console.log(this.state.censo)
     }
 
     censar(e){
         e.preventDefault();
-        console.log("----------------------------------------------------", this.personasTemp);
         let actual = parseInt(this.state.personas);
         let temp = parseInt(this.personasTemp);
         this.setState({personas:actual+temp});
+<<<<<<< HEAD
         console.log(this.state.personas);
         console.log(this.state.censo);
 
+=======
+
+>>>>>>> 6f325ae28f13126202398f7952734fa6683eea66
     }
 
     onChangeLocalidad(e) {
@@ -73,13 +79,35 @@ export default class Distrito extends Component {
 
     onChangePersonas (e) {
         this.personasTemp = e.target.value;
-        console.log(this.personasTemp);
     }
 
     consultarLocalidad (e) {
         e.preventDefault();
         ReactDOM.render(
-            <div>Restaurante </div>
+            <div className="d-flex justify-content-center">
+            <ol>
+                    <li>Restaurante Doña Blanca
+                        <ul>
+                            <li>Cll. 27 #13-23</li>
+                            <li>6 platos</li>
+                        </ul>
+                    </li>
+
+                    <li>Restaurante Anita
+                        <ul>
+                            <li>Cll. 85 # 112-22</li>
+                            <li>15 platos</li>
+                        </ul>
+                    </li>
+
+                    <li>Restaurante La Plancha
+                        <ul>
+                            <li>Cll. 28 # 49-35</li>
+                            <li>3 platos</li>
+                        </ul>
+                    </li>
+                </ol>
+                </div>
             , document.getElementById('restaurantes'));
     }
 
@@ -89,9 +117,7 @@ export default class Distrito extends Component {
     }
 
     render() {
-        console.log(this.state.censo);
-        console.log(this.state.recolectar);
-        console.log(this.state.personas);
+
 
         if (!this.state.recolectar && !this.state.censo) {
             return (

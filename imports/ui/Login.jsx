@@ -12,7 +12,6 @@ class Login extends Component {
   logIn() {
     Meteor.loginWithPassword(this.valueUser, this.valuePass, (err) => {
       if(err){
-        console.log("Hay un error")
         this.setState({error:true});}
     });
   }

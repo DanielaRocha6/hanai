@@ -54,7 +54,7 @@ class Login extends Component {
           Contraseña:<input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
           Repetir Contraseña: <input className="form-control" onChange={this.onChangeRPass.bind(this)} type="password" />
           </form>
-          <button onClick={this.logIn.bind(this)}>Sign up</button>
+          <button className="btn btn-success" onClick={this.logIn.bind(this)}>Sign up</button>
           </div>
         </div>
       );
@@ -68,7 +68,7 @@ class Login extends Component {
           Contraseña:<input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
           Repetir Contraseña: <input className="form-control" onChange={this.onChangeRPass.bind(this)} type="password" />
         </form>
-        <button onClick={this.logIn.bind(this)}>Sign up</button>
+        <button className="btn btn-success" onClick={this.logIn.bind(this)}>Sign up</button>
       </div>
     );
     }
