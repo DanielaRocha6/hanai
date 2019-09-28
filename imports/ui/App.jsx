@@ -4,6 +4,8 @@ import { withTracker } from "meteor/react-meteor-data";
 import { Meteor } from "meteor/meteor";
 import Login from "./Login.jsx";
 import SignUp from "./SignUp.jsx";
+import SignUpDistrito from "./SignUpDistrito.jsx";
+import SignUpRestaurante from "./SignUpRestaurante.jsx";
 import { BrowserRouter as Router, Route,Switch, Redirect} from 'react-router-dom';
 
 
@@ -17,10 +19,25 @@ const App = (props) => {
     props.history.push('/signup');
   };
 
+  const registerDistrito=()=>{
+    props.history.push('/signup/distrito');
+  };
+
+  const registerRestaurante=()=>{
+    props.history.push('/signup/restaurante');
+  };
+
+  const home=()=>{
+    props.history.push("/");
+  }
+
+
   return (<div>
     <Route exact path="/" render={() => <Home login={login} register={register}/>}/>
     <Route path="/login" component={Login}/>
-    <Route path="/signup" component={SignUp}/>
+    <Route exact path="/signup" render={() => <SignUp distrito={registerDistrito} restaurante={registerRestaurante}/>}/>
+    <Route exact path="/signup/distrito" render={()=><SignUpDistrito home={home}/>}/>
+    <Route exact path="/signup/restaurante" render={()=><SignUpRestaurante home={home}/>}/>
   </div>);
 };
 

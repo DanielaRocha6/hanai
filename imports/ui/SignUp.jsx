@@ -1,41 +1,26 @@
-import React, { Component } from 'react';
-import { withTracker } from 'meteor/react-meteor-data';
-import Links from '../api/links';
+import React, { useState, useRef } from "react";
+import { withTracker } from "meteor/react-meteor-data";
+import { Meteor } from "meteor/meteor";
 
-class Login extends Component {
-  constructor(props){
-    super(props);
-    this.valueUser="";
-    this.valuePass="";
-  }
 
-  logIn() {
-
-  }
-
-  onChangeUser(e){
-    this.valueUser=e.target.value;
-  }
-
-  onChangePass(e){
-    this.valuePass=e.target.value;
-  }
-
-  render() {
-    return (
-      <div>
-        <form>
-          <input onChange={this.onChangeUser.bind(this)} type="text" value="Username" />
-          <input onChange={this.onChangePass.bind(this)} type="text" value="Password" />
-        </form>
-        <button onClick={this.logIn.bind(this)}>Log in</button>
-      </div>
-    );
-  }
+const Home = (props) => {
+  return(
+  <div id="accounts-container">
+        {props.user
+          ?
+          <div>
+            <button id="user-profile-button" onClick={()=>{}}>{"Hello, "+this.props.user}</button>
+          </div>
+          :
+          <div>
+            <button onClick={props.distrito}>Registro usuario Distrito</button>
+            <button onClick={props.restaurante}>Registro usuario Restaurante</button>
+          </div>
+        }
+      </div>);
 }
-
-export default LoginContainer = withTracker(() => {
+ export default withTracker(() => {
   return {
-    links: Links.find().fetch(),
+    user: Meteor.user()
   };
-})(Login);
+})(Home)
