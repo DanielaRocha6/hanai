@@ -60,14 +60,14 @@ class Login extends Component {
             Error al crear usuario
           </div>
           <form>
-            Usuario: <input onChange={this.onChangeCorreo.bind(this)} type="text" />
-            Nombre: <input onChange={this.onChangePass.bind(this)} type="text" />
-            Direccion: <input onChange={this.onChangeDireccion.bind(this)} type="text" />
-            Localidad: <input onChange={this.onChangeLocalidad.bind(this)} type="text" />
-            Contraseña:<input onChange={this.onChangePass.bind(this)} type="password" />
+            Usuario: <input className="form-control" onChange={this.onChangeCorreo.bind(this)} type="text" />
+            Nombre: <input className="form-control" onChange={this.onChangePass.bind(this)} type="text" />
+            Direccion: <input className="form-control" onChange={this.onChangeDireccion.bind(this)} type="text" />
+            Localidad: <input className="form-control" onChange={this.onChangeLocalidad.bind(this)} type="text" />
+            Contraseña:<input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
             Repetir Contraseña: <input onChange={this.onChangeRPass.bind(this)} type="password" />
           </form>
-          <button onClick={this.logIn.bind(this)}>Sign up</button>
+          <button className="btn btn-success" onClick={this.logIn.bind(this)}>Sign up</button>
         </div>
       );
     }
@@ -75,14 +75,14 @@ class Login extends Component {
     return (
       <div>
         <form>
-            Usuario: <input onChange={this.onChangeCorreo.bind(this)} type="text" />
-            Nombre: <input onChange={this.onChangePass.bind(this)} type="text" />
-            Direccion: <input onChange={this.onChangeDireccion.bind(this)} type="text" />
-            Localidad: <input onChange={this.onChangeLocalidad.bind(this)} type="text" />
-            Contraseña:<input onChange={this.onChangePass.bind(this)} type="password" />
-            Repetir Contraseña: <input onChange={this.onChangeRPass.bind(this)} type="password" />
+            Usuario: <input className="form-control" onChange={this.onChangeCorreo.bind(this)} type="text" />
+            Nombre: <input className="form-control" onChange={this.onChangePass.bind(this)} type="text" />
+            Direccion: <input className="form-control" onChange={this.onChangeDireccion.bind(this)} type="text" />
+            Localidad: <input className="form-control" onChange={this.onChangeLocalidad.bind(this)} type="text" />
+            Contraseña:<input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
+            Repetir Contraseña: <input className="form-control" onChange={this.onChangeRPass.bind(this)} type="password" />
           </form>
-        <button onClick={this.logIn.bind(this)}>Sign up</button>
+        <button className="btn btn-success" onClick={this.logIn.bind(this)}>Sign up</button>
       </div>
     );
     }

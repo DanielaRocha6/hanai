@@ -47,13 +47,15 @@ class Login extends Component {
           <div>
             Error al crear usuario
           </div>
+          <div className="d-flex justify-content-center">
           <form>
-          Cedula: <input onChange={this.onChangeUser.bind(this)} type="text" />
-          IdDistrito: <input onChange={this.onChangeId.bind(this)} type="text" />
-          Contraseña:<input onChange={this.onChangePass.bind(this)} type="password" />
-          Repetir Contraseña: <input onChange={this.onChangeRPass.bind(this)} type="password" />
+          Cedula: <input className="form-control" onChange={this.onChangeUser.bind(this)} type="text" />
+          IdDistrito: <input className="form-control" onChange={this.onChangeId.bind(this)} type="text" />
+          Contraseña:<input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
+          Repetir Contraseña: <input className="form-control" onChange={this.onChangeRPass.bind(this)} type="password" />
           </form>
           <button onClick={this.logIn.bind(this)}>Sign up</button>
+          </div>
         </div>
       );
     }
@@ -61,10 +63,10 @@ class Login extends Component {
     return (
       <div>
         <form>
-          Cedula: <input onChange={this.onChangeUser.bind(this)} type="text" />
-          IdDistrito: <input onChange={this.onChangeId.bind(this)} type="text" />
-          Contraseña:<input onChange={this.onChangePass.bind(this)} type="password" />
-          Repetir Contraseña: <input onChange={this.onChangeRPass.bind(this)} type="password" />
+          Cedula: <input className="form-control" onChange={this.onChangeUser.bind(this)} type="text" />
+          IdDistrito: <input className="form-control" onChange={this.onChangeId.bind(this)} type="text" />
+          Contraseña:<input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
+          Repetir Contraseña: <input className="form-control" onChange={this.onChangeRPass.bind(this)} type="password" />
         </form>
         <button onClick={this.logIn.bind(this)}>Sign up</button>
       </div>

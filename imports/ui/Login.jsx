@@ -30,23 +30,23 @@ class Login extends Component {
       return (
         <div>
           <div>
-            Hay un error!!!!!!!
+            Inténtelo de nuevo
           </div>
           <form>
-            User: <input onChange={this.onChangeUser.bind(this)} type="text" />
-            Password: <input onChange={this.onChangePass.bind(this)} type="password" />
+            User: <input className="form-control" onChange={this.onChangeUser.bind(this)} type="text" />
+            Password: <input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
           </form>
-          <button onClick={this.logIn.bind(this)}>Log in</button>
+          <button className="btn btn-outline-success" onClick={this.logIn.bind(this)}>Log in</button>
         </div>
       );
     }
     return (
       <div>
         <form>
-          User: <input onChange={this.onChangeUser.bind(this)} type="text" />
-          Password: <input onChange={this.onChangePass.bind(this)} type="password" />
+          User: <input className="form-control" onChange={this.onChangeUser.bind(this)} type="text" />
+          Password: <input className="form-control" onChange={this.onChangePass.bind(this)} type="password" />
         </form>
-        <button onClick={this.logIn.bind(this)}>Log in</button>
+        <button className="btn btn-outline-success" onClick={this.logIn.bind(this)}>Log in</button>
       </div>
     );
   }
