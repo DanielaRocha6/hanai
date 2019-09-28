@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import Links from '../api/links';
@@ -77,8 +78,8 @@ export default class Distrito extends Component {
 
     consultarLocalidad (e) {
         e.preventDefault();
-        return(
-            <div>Restaurante</div>
+        ReactDOM.render(
+            <div>Restaurante </div>
             , document.getElementById('restaurantes'));
     }
 

@@ -35,7 +35,7 @@ const App = (props) => {
 
   return (<div>
 
-    <Route path="/" render={() => <Navbar user={props.user}/>} />
+    <Route path="/" render={() => <Navbar user={props.user} login={login} register={register}/>} />
     <Route exact path="/" render={() => <Home user={props.user} login={login} register={register}/>}/>
     <Route path="/login" component={Login}/>
     <Route exact path="/signup" render={() => <SignUp distrito={registerDistrito} restaurante={registerRestaurante}/>}/>

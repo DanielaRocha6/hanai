@@ -13,11 +13,14 @@ const Home = (props) => {
 
           :
           <div>
-            <button onClick={props.login}>Login</button>
-            <button onClick={props.register}>Signup</button>
-            <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center">
               <img id="logoComp" src="images/LogoCompleto.png" />
-            </div>
+           </div>
+           <div className="d-flex justify-content-center texto" >
+           <p>
+             ¿Qué es Hanai? <br/> Hanai es una plataforma web que permite que restaurantes donen comida a personas en condición de pobreza extrema.
+            </p>
+           </div>
           </div>
         }
       </div>

@@ -31,8 +31,8 @@ export default class Info extends Component {
           <nav className="navbar navbar-light bg-light">
             <a className="navbar-brand">Nutrimos tu sonrisa</a>
             <form className="form-inline">
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Signup</button>
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={this.props.login}>Login</button>
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={this.props.register}>Signup</button>
             </form>
           </nav>
         </div>

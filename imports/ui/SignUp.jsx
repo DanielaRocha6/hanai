@@ -11,9 +11,9 @@ const Home = (props) => {
           <div>
           </div>
           :
-          <div>
-            <button onClick={props.distrito}>Registro usuario Distrito</button>
-            <button onClick={props.restaurante}>Registro usuario Restaurante</button>
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-outline-success" onClick={props.distrito}>Registro usuario Distrito</button>
+            <button className="btn btn-outline-success" onClick={props.restaurante}>Registro usuario Restaurante</button>
           </div>
         }
       </div>);
