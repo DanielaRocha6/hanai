@@ -1,0 +1,2 @@
+# hanai
+Una plataforma web que permite que restaurantes donen comida a personas en condición de pobreza. Con esta plataforma, el Distrito de Bogotá, representado por la Secretaría de Integración Social, tiene la posibilidad de reconocer qué restaurantes tienen comida disponible y gestionar con mayor facilidad el transporte de esta comida a las zonas con mayor cantidad de personas en situación de pobreza, en especial a comedores sociales dentro de esas zonas y a lugares lo suficientemente cercanos a puntos de movilidad estratégicos como estaciones de Transmilenio.
