@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Meteor} from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import Links from '../api/links';
 
@@ -6,13 +7,14 @@ export default class Distrito extends Component {
     constructor(props) {
         super(props);
         this.localidad = "";
+        this.personasTemp=0;
         this.state = {
             censo: false,
-            recolectar: false
+            recolectar: false,
+            personas:0
         };
 
     }
-
 
     irrecolectar() {
         this.setState({recolectar:true});
@@ -25,12 +27,21 @@ export default class Distrito extends Component {
         console.log(this.state.censo)
     }
 
-    censar(){
-
+    censar(e){
+        e.preventDefault();
+        console.log("----------------------------------------------------", this.personasTemp);
+        let actual = parseInt(this.state.personas);
+        let temp = parseInt(this.personasTemp);
+        this.setState({personas:actual+temp});
+        console.log(this.state.personas);
+        console.log(this.state.censo);
+        
     }
-    onChangeLocalidad(e) {
-        this.localidad = e.target.value;
 
+    onChangeLocalidad(e) {
+
+        e.preventDefault();
+        this.localidad = e.target.value;
         render(
             <div className="d-flex justify-content-left divDistrito">
                 <ol>
@@ -58,15 +69,24 @@ export default class Distrito extends Component {
             </div>
             , document.getElementById('restaurantes'));
     }
-    censar() {
-
+   
+    onChangePersonas (e) {
+        this.personasTemp = e.target.value;
+        console.log(this.personasTemp);
     }
 
-    consultarLocalidad () {
-
+    consultarLocalidad (e) {
+        e.preventDefault();
+        return(
+            <div>Restaurante</div>
+            , document.getElementById('restaurantes'));
     }
 
     render() {
+        console.log(this.state.censo);
+        console.log(this.state.recolectar);
+        console.log(this.state.personas);
+        
         if (!this.state.recolectar && !this.state.censo) {
             return (
                 <div className="container">
@@ -87,10 +107,10 @@ export default class Distrito extends Component {
                 </div>
 
                 <form>
-                    <label for="formGroupExampleInput">
+                    <label >
                         <h2>Mi localidad asignada es...</h2>
                     </label>
-                    <select className="form-control" id="exampleFormControlSelect1">
+                    <select className="form-control" >
                         <option>Usaquen</option>
                         <option>Chapinero</option>
                         <option>Santa Fe</option>
@@ -130,14 +150,15 @@ export default class Distrito extends Component {
                     </div>
 
                     <form>
-                        <label for="formGroupExampleInput">
+                        <label >
                             <h2>He visto...</h2>
                         </label>
-                        <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Registra cantidad de personas en condición de pobreza vistas" />
+                        <input type="text" onChange={this.onChangePersonas.bind(this)} className="form-control" placeholder="Registra cantidad de personas en condición de pobreza vistas" />
                         <div className="form-group">
                             <button  onClick={this.censar.bind(this)} className="btn btn-primary mb-2 boton2">Enviar</button>
                         </div>
                     </form>
+                Hoy has registrado {this.state.personas} personas en condición de pobreza
                 </div>
             );
         }

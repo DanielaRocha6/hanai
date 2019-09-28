@@ -4,16 +4,24 @@ import Restaurante from "./Restaurante.jsx";
 
 
 const Home = (props) => {
-  return(
-  <div id="accounts-container">
+  return (
+    <div>
+
+      <div id="accounts-container">
         {props.user
-          ? props.user.profile.rol==="DISTRITO"? <Distrito user={props.user}/>:<Restaurante user={props.user}/>
+          ? props.user.profile.rol==="DISTRITO"? <Distrito/>:<Restaurante user={props.user}/>
+
           :
           <div>
             <button onClick={props.login}>Login</button>
             <button onClick={props.register}>Signup</button>
+            <div className="d-flex justify-content-center">
+              <img id="logoComp" src="images/LogoCompleto.png" />
+            </div>
           </div>
         }
-      </div>);
+      </div>
+    </div>);
 }
- export default Home;
+
+export default Home;

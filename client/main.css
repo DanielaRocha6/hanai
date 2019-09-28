@@ -19,3 +19,13 @@ body {
 button {
   margin: 1rem;
 }
+
+#logo {
+  width: 6%;
+  height: 6%;
+}
+
+#logoComp {
+  width: 40%;
+  height: 40%;
+}
