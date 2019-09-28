@@ -5,20 +5,29 @@ import Links from '../api/links';
 export default class Distrito extends Component {
     constructor(props) {
         super(props);
-        this.recolectar = false;
-        this.censo = false;
         this.localidad = "";
+        this.state = {
+            censo: false,
+            recolectar: false
+        };
+
     }
 
 
     irrecolectar() {
-        this.recolectar = true;
+        this.setState({recolectar:true});
+        
+        console.log(this.state.recolectar)
     }
 
     irCensar() {
-        this.censo = true;
+        this.setState({censo:true});
+        console.log(this.state.censo)
     }
 
+    censar(){
+
+    }
     onChangeLocalidad(e) {
         this.localidad = e.target.value;
 
@@ -53,8 +62,12 @@ export default class Distrito extends Component {
 
     }
 
+    consultarLocalidad () {
+
+    }
+
     render() {
-        if (!this.recolectar && !this.censo) {
+        if (!this.state.recolectar && !this.state.censo) {
             return (
                 <div className="container">
                     <div className="d-flex justify-content-center">
@@ -67,7 +80,7 @@ export default class Distrito extends Component {
                 </div>
             );
         }
-        else if (this.recolectar) {
+        else if (this.state.recolectar) {
             return (<div className="container">
                 <div className="d-flex justify-content-center">
                     <h1>Censar</h1>
@@ -75,15 +88,31 @@ export default class Distrito extends Component {
 
                 <form>
                     <label for="formGroupExampleInput">
-                        <h2>Mi this.localidad asignada es...</h2>
+                        <h2>Mi localidad asignada es...</h2>
                     </label>
                     <select className="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>  <div className="form-group">
+                        <option>Usaquen</option>
+                        <option>Chapinero</option>
+                        <option>Santa Fe</option>
+                        <option>San Cristobal</option>
+                        <option>Usme</option>
+                        <option>Tunjuelito</option>
+                        <option>Bosa</option>
+                        <option>Kennedy</option>
+                        <option>Fontibón</option>
+                        <option>Engativá</option>
+                        <option>Suba</option>
+                        <option>Barrios Unidos</option>
+                        <option>Teusaquillo</option>
+                        <option>Los Mártires</option>
+                        <option>Antonio Nariño</option>
+                        <option>Puente Aranda</option>
+                        <option>La Candelaria</option>
+                        <option>Rafael Uribe Uribe</option>
+                        <option>Ciudad Bolivar</option>
+                        <option>Sumapaz</option>
+                    </select>  
+                    <div className="form-group">
                         <button  onClick={this.consultarLocalidad.bind(this)} className="btn btn-primary mb-2 boton2">Enviar</button>
                     </div>
                 </form>
@@ -93,7 +122,7 @@ export default class Distrito extends Component {
                 <div id="restaurantes"></div>
             </div>);
         }
-        else if (this.censo) {
+        else if (this.state.censo) {
             return (
                 <div className="container">
                     <div className="d-flex justify-content-center">
