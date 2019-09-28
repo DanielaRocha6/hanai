@@ -5,7 +5,7 @@ import { Meteor } from "meteor/meteor";
 class Login extends Component {
   constructor(props){
     super(props);
-    this.valueCorreo="";
+    this.valueUser="";
     this.valueNombre="";
     this.valueDireccion="";
     this.valueLocalidad="";
@@ -19,9 +19,9 @@ class Login extends Component {
       this.setState({error:true})
     }
     else{
-      Meteor.subscribe('users');
-      Meteor.call("createUsers",this.valueCorreo,this.valueNombre, this.valuePass, "RESTAURANTE", this.valueLocalidad, this.valueDireccion);
-      Meteor.loginWithPassword(this.valueCorreo, this.valuePass,(err)=>{
+      Meteor.call("createUsers",this.valueUser,this.valueNombre, this.valuePass, "RESTAURANTE", this.valueLocalidad, this.valueDireccion);
+      Meteor.call("createRestaurante",this.valueUser);
+      Meteor.loginWithPassword(this.valueUser, this.valuePass,(err)=>{
         if(err) throw err;
         this.props.home();
       })
@@ -29,7 +29,7 @@ class Login extends Component {
   }
 
   onChangeCorreo(e){
-    this.valueCorreo=e.target.value;
+    this.valueUser=e.target.value;
   }
 
   onChangeNombre(e){
@@ -60,7 +60,7 @@ class Login extends Component {
             Error al crear usuario
           </div>
           <form>
-            Correo: <input onChange={this.onChangeCorreo.bind(this)} type="text" />
+            Usuario: <input onChange={this.onChangeCorreo.bind(this)} type="text" />
             Nombre: <input onChange={this.onChangePass.bind(this)} type="text" />
             Direccion: <input onChange={this.onChangeDireccion.bind(this)} type="text" />
             Localidad: <input onChange={this.onChangeLocalidad.bind(this)} type="text" />
@@ -75,7 +75,7 @@ class Login extends Component {
     return (
       <div>
         <form>
-            Correo: <input onChange={this.onChangeCorreo.bind(this)} type="text" />
+            Usuario: <input onChange={this.onChangeCorreo.bind(this)} type="text" />
             Nombre: <input onChange={this.onChangePass.bind(this)} type="text" />
             Direccion: <input onChange={this.onChangeDireccion.bind(this)} type="text" />
             Localidad: <input onChange={this.onChangeLocalidad.bind(this)} type="text" />

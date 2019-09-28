@@ -9,7 +9,6 @@ const Home = (props) => {
         {props.user
           ?
           <div>
-            <button id="user-profile-button" onClick={()=>{}}>{"Hello, "+this.props.user.username}</button>
           </div>
           :
           <div>

@@ -1,14 +1,13 @@
 import React, { useState, useRef } from "react";
-import { withTracker } from "meteor/react-meteor-data";
-import { Meteor } from "meteor/meteor";
 import Distrito from "./Distrito.jsx";
+import Restaurante from "./Restaurante.jsx";
 
 
 const Home = (props) => {
   return(
   <div id="accounts-container">
         {props.user
-          ? props.user.profile.rol==="DISTRITO"? <Distrito/>:<div/>
+          ? props.user.profile.rol==="DISTRITO"? <Distrito user={props.user}/>:<Restaurante user={props.user}/>
           :
           <div>
             <button onClick={props.login}>Login</button>
@@ -17,8 +16,4 @@ const Home = (props) => {
         }
       </div>);
 }
- export default withTracker(() => {
-  return {
-    user: Meteor.user()
-  };
-})(Home)
+ export default Home;

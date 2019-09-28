@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import Restaurantes from '../imports/api/restaurantes.js';
 
 Meteor.methods({
   createUsers: function(user, id, password, rol, localidad, direccion) {
@@ -13,9 +14,20 @@ Meteor.methods({
       password: password
     })
   },
-  deleteUser : function(id){
-     return Meteor.users.remove(id);
+  createRestaurante: function(id){
+    Restaurantes.insert({
+      id:id,
+      donaciones:[]
+    })
   },
+  insertDonation: function(id, nuevaDonacion){
+    console.log(id);
+    console.log(nuevaDonacion);
+    Restaurantes.findOne({id:id},(err, result)=>{
+      if(err) throw console.log(err);
+      console.log(result);
+    });
+  }
  });
 
 
